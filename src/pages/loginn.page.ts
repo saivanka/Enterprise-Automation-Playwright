@@ -1,0 +1,19 @@
+import {Page, Locator} from '@playwright/test';
+
+export class LoginPage {
+    readonly page: Page;
+    readonly userInput: Locator;
+    readonly passwordInput: Locator;
+    readonly loginButton: Locator;
+    readonly errorMessage: Locator;
+
+    constructor(page: Page){
+        this.page = page;
+
+        this.userInput = page.locator('#user-name');
+        this.passwordInput = page.locator('#password');
+        this.loginButton = page.locator('#login-button');
+        this.errorMessage = page.locator('[data-test="error"]');
+  
+    }
+}
